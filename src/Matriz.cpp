@@ -2,11 +2,11 @@
 
 /***********************************************************************************************/
 Matriz::Matriz(Dimension n, Dimension m) {
-    establecerDim(n,m);
-    try{
+    try {
+        establecerDim(n,m);
         crearMatriz();
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < m; ++j) {
+        for (Dimension i = 0; i < n; ++i) {
+            for (Dimension j = 0; j < m; ++j) {
                 *(*(componentes + i) + j) = 0;
           }
         }
@@ -29,14 +29,13 @@ Matriz::~Matriz() {
 /***********************************************************************************************/
 std::ostream & operator<<(std::ostream &out, const Matriz &A)
 {
-    //out << "|";
-    for (int i = 0; i < A.n; ++i) {
-        for(int j = 0; j < A.m; ++j){
-          out << /*std::fixed << std::setprecision(2) <<*/
+    for (Dimension i = 0; i < A.n; ++i) {
+        for(Dimension j = 0; j < A.m; ++j){
+          out <<
           "[" << *(*(A.componentes + i) + j) << "]";
         }
+        out << std::endl;
     }
-    out << "\b\b>";
     return out;
 }
 
@@ -51,8 +50,8 @@ Matriz& Matriz::operator=(const Matriz &A)
             eliminarMatriz();
             crearMatriz();
         }
-        for (int i = 0; i < n; ++i) {
-            for(int j = 0; j < m; ++j){
+        for (Dimension i = 0; i < n; ++i) {
+            for(Dimension j = 0; j < m; ++j){
                 *(*(componentes+i)+j) = *(*(A.componentes+i)+j);
             }
         }
@@ -65,8 +64,8 @@ Matriz& Matriz::operator=(const Matriz &A)
 /***********************************************************************************************/
 std::istream & operator>>(std::istream &in, Matriz &A)
 {
-    for (int i = 0; i < A.n; ++i) {
-        for (int j = 0; j < A.m; ++j) {
+    for (Dimension i = 0; i < A.n; ++i) {
+        for (Dimension j = 0; j < A.m; ++j) {
             in >> *(*(A.componentes + i) + j);
         }
     }
@@ -79,8 +78,8 @@ Matriz Matriz::operator*(const Matriz &A) const {
         throw "No es posible realizar la multiplicación";
     Matriz r(A, n, A.m);
 
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < m; ++j) {
+    for (Dimension i = 0; i < n; ++i) {
+        for (Dimension j = 0; j < m; ++j) {
             
         }
     }
@@ -95,16 +94,15 @@ void Matriz::establecerDim(Dimension n, Dimension m) {
 }
 /***********************************************************************************************/
 void Matriz::crearMatriz() {
-    for (int i = 0; i < this->n; ++i) {
-        delete[] *(componentes + i);
+    componentes = new double*[n];
+    for (Dimension i = 0; i < this->n; ++i) {
+        *(componentes+i) = new double[m];
     }
-    delete componentes;
-    componentes = nullptr;
 }
 /***********************************************************************************************/
 
 void Matriz::eliminarMatriz() {
-    for (int i = 0; i < this->n; ++i) {
+    for (Dimension i = 0; i < this->n; ++i) {
         delete[] *(componentes + i);
     }
     delete componentes;

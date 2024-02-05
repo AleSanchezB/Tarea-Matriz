@@ -3,10 +3,12 @@
 #include "Matriz.hpp"
 
 int main() {
-    Matriz a(2, 3);
+    Matriz a(4, 1);
     Matriz b(2, 2);
 
+    std::cin >> a;
     std::cin >> b;
-    std::cout << b << std::endl << a;
+
+    std::cout<<a;
     return 0;
 }

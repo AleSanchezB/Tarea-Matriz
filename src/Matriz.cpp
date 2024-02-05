@@ -25,7 +25,6 @@ Matriz::Matriz(const Matriz &A, Dimension n, Dimension m) : n(n), m(m), componen
 Matriz::~Matriz() {
     eliminarMatriz();
 }
-
 /***********************************************************************************************/
 std::ostream & operator<<(std::ostream &out, const Matriz &A)
 {
@@ -109,3 +108,60 @@ void Matriz::eliminarMatriz() {
     componentes = nullptr;
 }
 /***********************************************************************************************/
+// Domingo 4 de febrero Joaquin Sotelo
+/***********************************************************************************************/
+Matriz Matriz::operator+(const Matriz&A) const {
+    if (n != A.n || m != A.m)
+        throw "No es posible realizar la suma";
+    Matriz r(n,m);
+    for(int i=0; i < n; ++i) {
+        for(int j=0; j < m; ++j) {
+            *(*(r.componentes + i) + j) = *(*(componentes + i) + j) + *(*(A.componentes + i) + j);
+        }
+    }
+    return r;
+}
+
+Matriz Matriz::operator-(const Matriz&A) const {
+    if (n != A.n || m != A.m)
+        throw "No es posible realizar la resta";
+    Matriz r(n,m);
+    for(int i=0; i < n; ++i) {
+        for(int j=0; j < m; ++j) {
+            *(*(r.componentes + i) + j) = *(*(componentes + i) + j) - *(*(A.componentes + i) + j);
+        }
+    }
+    return r;
+}
+
+Matriz Matriz::operator*(double escalar) const {
+    Matriz r(n,m);
+    for(int i=0; i < n; ++i) {
+        for(int j=0; j < m; ++j) {
+            *(*(r.componentes + i) + j) = escalar * *(*(componentes + i) + j);
+        }
+    }
+    return r;
+}
+
+Matriz operator*(int escalar, const Matriz& A) {
+    Matriz r(A.n,A.m);
+    for(int i=0; i < A.n; ++i) {
+        for(int j=0; j < A.m; ++j) {
+            *(*(r.componentes + i) + j) = escalar * *(*(A.componentes + i) + j);
+        }
+    }
+    return r;
+}
+Matriz Matriz::transpuesta() const {
+    Matriz r(m,n);
+    for(int i=0; i < n; ++i) {
+        for(int j=0; j < m; ++j) {
+            *(*(r.componentes + j) + i) = *(*(componentes + i) + j);
+        }
+    }
+    return r;
+}
+void Matriz::resize(Dimension n, Dimension m) {
+
+}

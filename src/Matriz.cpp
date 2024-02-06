@@ -166,28 +166,13 @@ void Matriz::resize(Dimension n, Dimension m) {
     if (this->n == n && this->m ==m) return; //Checa si las nuevas dimensiones son iguales y termina si lo son
 
     Matriz const r(n,m); //Crea nueva matriz con dimensiones nuevas
-    if(this->n <= n && this->m <= m) {
-        for(int i=0; i < this->n; ++i) {
-            for(int j=0; j < this->m; ++j) {
-                *(*(r.componentes + i) + j) = *(*(componentes + i) + j);
-            }
-        }
-    }else if(this->n > n && this->m >m) {
-        for(int i=0; i < n; ++i) {
-            for(int j=0; j < m; ++j) {
-                *(*(r.componentes + i) + j) = *(*(componentes + i) + j);
-            }
-        }
-    }else if(this->n < n)
-        for(int i=0; i < this->n; ++i) {
-            for(int j=0; j < m; ++j) {
-                *(*(r.componentes + i) + j) = *(*(componentes + i) + j);
-            }
-        }else
-                for(int i=0; i < n; ++i) {
-                    for(int j=0; j < this->m; ++j) {
-                        *(*(r.componentes + i) + j) = *(*(componentes + i) + j);
 
-                    }
-                }*this = r;
+    this->n = (this->n > n) ? n : this ->n;
+    this->m = (this->m > m) ? m : this ->m;
+
+    for(int i=0; i< this->n; ++i) {
+        for(int j=0; j < this->m; ++j) {
+            *(*(r.componentes + i)+ j)= *(*(componentes + i)+ j);
+        }
+    } *this=r;
 }

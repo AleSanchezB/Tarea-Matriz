@@ -1,0 +1,34 @@
+\hypertarget{Matriz_8hpp}{}\doxysection{Referencia del Archivo src/\+Matriz.hpp}
+\label{Matriz_8hpp}\index{src/Matriz.hpp@{src/Matriz.hpp}}
+
+
+Implementaci\'{o}n de una \mbox{\hyperlink{classMatriz}{Matriz}} algebraica.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+Dependencia gráfica adjunta para Matriz.\+hpp\+:
+% FIG 0
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMatriz}{Matriz}}
+\end{DoxyCompactItemize}
+\doxysubsection*{typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Matriz_8hpp_ab8db1bfaaf5ae91fbe5c3561ec7c9e55}\label{Matriz_8hpp_ab8db1bfaaf5ae91fbe5c3561ec7c9e55}} 
+typedef unsigned int {\bfseries Dimension\+\_\+tipo}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Implementaci\'{o}n de una \mbox{\hyperlink{classMatriz}{Matriz}} algebraica. 
+
+\begin{DoxyAuthor}{Autor}
+Joaqu\'{\i}n Rafael Sotelo Islas 
+
+Braulio Alessandro S\'{a}nchez Berm\'{u}dez 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+06/02/2024 
+\end{DoxyDate}

@@ -6,8 +6,12 @@ TARGET = Matriz
 # Compilador
 CXX = g++
 
+CXXFLAGS_WARNINGS = -Wall -Wextra -Wpedantic -Werror
+
+CXXFLAGS_SANITIZE = -fsanitize=address -fsanitize=undefined -fsanitize=shift -fsanitize=integer-divide-by-zero -fsanitize=unreachable -fsanitize=vla-bound -fsanitize=null -fsanitize=return -fsanitize=signed-integer-overflow -fsanitize=bounds -fsanitize=bounds-strict -fsanitize=alignment -fsanitize=object-size -fsanitize=float-divide-by-zero -fsanitize=float-cast-overflow -fsanitize=nonnull-attribute -fsanitize=returns-nonnull-attribute -fsanitize=bool -fsanitize=enum -fsanitize=vptr
+
 # Opciones de compilación
-CXXFLAGS = -std=c++20 -Wall
+CXXFLAGS = -std=c++20 $(CXXFLAGS_SANITIZE) $(CXXFLAGS_WARNINGS)
 
 # Directorios
 SRCDIR = src
@@ -41,5 +45,5 @@ run: $(BINDIR)/$(TARGET)
 	./$(BINDIR)/$(TARGET)
 # Generar documentación
 d:
-	@doxygen $(SRCDIR)/Doxyfile
+	@doxygen doc/Doxyfile
 	@echo "Documentación generada en $(DOCDIR)/html/index.html"

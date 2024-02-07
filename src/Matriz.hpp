@@ -1,8 +1,9 @@
 /**
  * \file Matriz.hpp
- * \brief Implementaci&oacute;n de un Matriz algebraico
- * \author Irene Rodr&iacute;guez Castillo
- * \date 30/01/2024
+ * \brief Implementaci&oacute;n de una Matriz algebraica
+ * \author Joaqu&iacute;n Rafael Sotelo Islas
+ * \author Braulio Alessandro S&aacute;nchez Berm&uacute;dez
+ * \date 06/02/2024
  */
 
 #ifndef MATRIZ_HPP
@@ -43,27 +44,21 @@ Matriz..." << std::endl; cin >> w;
 
     resultante = v * 2.5;
 
-    std::cout << v << " * " << 2.5 << " = " << resultante << std::endl;
-
-    resultante = 2.5 * w;
-
-    std::cout << 2.5 << " * " << w << " = " << resultante << std::endl;
-
     std::cout << v << "^-1 = " << v.inversa() << std::endl;
 
-    std::cout << w << "^-1 = " << w.inversa() << std::endl;
+    std::cout << v << " * " << 2.5 << " = " << resultante << std::endl;
 
     return 0;
 }
  * \endcode
  *
  \verbatim Salida:
-     Introduzca las 2 componentes de la primera Matriz...
+     Introduzca las 4 componentes de la primera Matriz...
      1
      2
      3
      4
-     Introduzca las 2 componentes de la segunda Matriz...
+     Introduzca las 4 componentes de la segunda Matriz...
      5
      6
      7
@@ -76,6 +71,7 @@ Matriz..." << std::endl; cin >> w;
      =
      [6][8]
      [10][12]
+
      [1][2]
      [3][4]
      -
@@ -85,16 +81,34 @@ Matriz..." << std::endl; cin >> w;
      [-4][-4]
      [-4][-4]
 
-faltaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-     (1, 2) * (3, 4) = 11
-     (1, 2) * 2.5 = (2.5, 5)
-     2.5 * (3, 4) = (7.5, 10)
-     |(1, 2)| = 2.23607
-     |(3, 4)| = 5
+     [1][2]
+     [3][4]
+     *
+     [5][6]
+     [7][8]
+     =
+     [19][22]
+     [43][50]
+
+     [1][2]
+     [3][4]
+     ^-1
+     =
+     [-2][1]
+     [1.5][-0.5]
+
+     [1][2]
+     [3][4]
+     *
+     2.5
+     =
+     [2.5][5]
+     [7.5][10]
+
   \endverbatim
  *
  */
-typedef unsigned int Dimension;
+typedef unsigned int Dimension_tipo;
 
 class Matriz {
     /** \brief Operador de inserci&oacute;n. Permite imprimir una matriz mediante un flujo de salida.
@@ -127,18 +141,23 @@ class Matriz {
 public:
     /** \brief Constructor.
      *
-     * Versi&oacute;n 1: Constructor de una Matriz de dimensi&oacute;n 1 por omisi&oacute;n.
+     * Versi&oacute;n 1: Constructor de una Matriz de dimensi&oacute;n 1 por
+     omisi&oacute;n.
      *
-     * Versi&oacute;n 2: Constructor de una Matriz de la dimensi&oacute;n indicada por \b dim. Operador de conversi&oacute;n expl&iacute;cita de \b int a \b Matriz.
+     * Versi&oacute;n 2: Constructor de una Matriz de la dimensi&oacute;n indicada
+     por \b n y m. Operador de conversi&oacute;n expl&iacute;cita de \b int a \b
+     Matriz.
      *
-     * \param dim La dimensi&oacute;n de la Matriz a construir.
+     * \param n La dimensi&oacute;n de las filas de la Matriz a construir.
      *
-     * \pre La dimensi&oacute;n debe ser un n&uacute;mero positivo.
+     * \param m La dimensi&oacute;n de las columnas de la Matriz a construir.
+     *
+     * \pre La dimensi&oacute;n y m deben ser un n&uacute;meros positivos.
      *
      * \exception const <b>char *</b> La Matriz no puede ser creado o la dimens&oacute;n no es positiva.
      *
      */
-    explicit Matriz(Dimension n = 1, Dimension m = 1);
+    explicit Matriz(Dimension_tipo n = 1, Dimension_tipo m = 1);
 
     /** \brief Constructor de copias.
      *
@@ -147,9 +166,10 @@ public:
      * \exception const <b>char *</b> La Matriz copia no puede ser creado.
      */
     Matriz(const Matriz &A);
-    
+
     /** \brief Destructor.
      *
+     * Libera la memoria del arreglo bidimensional reservado por el constructor.
      */
     ~Matriz();
     
@@ -162,31 +182,112 @@ public:
      */
     Matriz& operator=(const Matriz& A);
 
-    // Operadores para suma, resta, producto, producto por escalar
+    /** \brief Operador para sumar dos matrices.
+     *
+     * \param A Sumando derecho.
+     * \return La matriz resultante de la suma.
+     *
+     * \pre Las matrices a sumar deben ser de la misma dimensi&oacute;n.
+     *
+     * \exception const <b>char *</b> Las matrices a sumar no son de la misma dimensi&oacute;n o la matriz resultante no puede ser creado.
+     */
     Matriz operator+(const Matriz& A) const;
-    Matriz operator-(const Matriz& A) const;
-    Matriz operator*(const Matriz& A) const;
+
+    /** \brief Operador para restar dos matrices.
+     *
+     * \param A Restando derecho.
+     * \return La matriz resultante de la resta.
+     *
+     * \pre Las matrices a sumar deben ser de la misma dimensi&oacute;n.
+     *
+     * \exception const <b>char *</b> Las matrices a restar no son de la misma dimensi&oacute;n o la matriz resultante no puede ser creado.
+     */
+    Matriz operator-(const Matriz &A) const;
+
+    /** \brief Operador para multiplicar dos matrices.
+     *
+     * \param A El factor derecho.
+     * \return La matriz resultado de la multiplicaci&oacute;n.
+     *
+     * \pre Sea la matriz A de nxm y la matriz B debe ser de dimensi&oacute;n mxa.
+     *
+     * \exception const <b>char *</b> Las matrices a multiplicar, la cantidad columnas de la matriz izquierda es diferente a la cantidad de filas de la derecha.
+     */
+    Matriz operator*(const Matriz &A) const;
+
+    /** \brief Operador de multiplicaci&oacute;n de escalar por Matriz.
+     *
+     * \param escalar El n&uacute;mero por el que se multiplica un Matriz.
+     * \return La Matriz resultante de la multiplicaci&oacute;n por escalar.
+     *
+     * \exception const <b> char * </b> La Matriz resultante no puede ser creado.
+     *
+     */
     Matriz operator*(double escalar) const;
 
-    // Métodos para calcular la transpuesta e inversa
+    /** \brief Devuelve la matriz transpuesta.
+     *
+     * \param escalar El n&uacute;mero por el que se multiplica un Matriz.
+     * \return La Matriz resultante de la multiplicaci&oacute;n por escalar.
+     *
+     * \exception const <b> char * </b> La Matriz resultante no puede ser creado.
+     *
+     */
     Matriz transpuesta() const;
-    Matriz inversa();
 
-    // Método de redimensionamiento
-    void resize(Dimension n, Dimension m);
+    /** \brief Devuelve la matriz inversa.
+     *
+     * \return La Matriz resultante de la operaci&oacute;n inversa.
+     *
+     * \pre La matriz debe ser cuadrada (nxn).
+     *
+     * \exception const <b> char * </b> La Matriz no es invertible.
+     *
+     */   
+    Matriz inversa() const;
 
-    double Determinante();
+    /** \brief Redimensiona la matriz.
+     *
+     * \param n El n&uacute;mero de filas
+     * \param m El n&uacute;mero de columnas
+     *
+     * \exception const <b> char * </b> Si n o m no es un n&uacute;mero positivo.
+     *
+     */ 
+    void resize(Dimension_tipo n, Dimension_tipo m);
 
-    Dimension obtenerFilas();
-    Dimension obtenerColumnas();
+    /** \brief Calcula el determinante de la matriz.
+     *
+     * \return El valor del determinante.
+     *
+     * \pre La matriz debe ser cuadrada (nxn).
+     *
+     * \exception const <b> char * </b> No puede calcular su determinante.
+     *
+     */
+    double Determinante() const;
+
+     /** \brief Devuelve el n&uacute;mero de filas.
+     *
+     * \return El valor de la dimension.
+     *
+     */
+    Dimension_tipo obtenerFilas();
+
+    /** \brief Devuelve el n&uacute;mero de columnas.
+     *
+     * \return El valor de la dimension.
+     *
+     */
+    Dimension_tipo obtenerColumnas();
 private:
-    Dimension n;
-    Dimension m;
+    Dimension_tipo n;
+    Dimension_tipo m;
     double **componentes;
 
-    void establecerDim(Dimension, Dimension);
+    void establecerDim(Dimension_tipo, Dimension_tipo);
     void eliminarMatriz();
     void crearMatriz();     
-    Matriz identidad();
+    Matriz identidad() const;
 };
 #endif

@@ -1,0 +1,514 @@
+\hypertarget{classMatriz}{}\doxysection{Referencia de la Clase Matriz}
+\label{classMatriz}\index{Matriz@{Matriz}}
+
+
+{\ttfamily \#include $<$Matriz.\+hpp$>$}
+
+\doxysubsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatriz_a744e5843b734dae0a72c43481bf4955a}{Matriz}} (Dimension\+\_\+tipo n=1, Dimension\+\_\+tipo m=1)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz_a9a8519c28b24cfa75fc41bf993f9132a}{Matriz}} (const \mbox{\hyperlink{classMatriz}{Matriz}} \&A)
+\begin{DoxyCompactList}\small\item\em Constructor de copias. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz_a2092b7a289ecec369e1da407d5839f5a}{$\sim$\+Matriz}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}} \& \mbox{\hyperlink{classMatriz_ad4d8e0df6a6158554bbd58eecc58801a}{operator=}} (const \mbox{\hyperlink{classMatriz}{Matriz}} \&A)
+\begin{DoxyCompactList}\small\item\em Operador de asignaci\'{o}n. Copia un matriz en otro matriz. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}} \mbox{\hyperlink{classMatriz_aa620e8b8852e3336c7102dcf73f0165f}{operator+}} (const \mbox{\hyperlink{classMatriz}{Matriz}} \&A) const
+\begin{DoxyCompactList}\small\item\em Operador para sumar dos matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}} \mbox{\hyperlink{classMatriz_a9e9c2702902246f65bc502255a3e97c2}{operator-\/}} (const \mbox{\hyperlink{classMatriz}{Matriz}} \&A) const
+\begin{DoxyCompactList}\small\item\em Operador para restar dos matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}} \mbox{\hyperlink{classMatriz_a0c3dc47ff7dbbcf3670d48fa0d6e36cf}{operator$\ast$}} (const \mbox{\hyperlink{classMatriz}{Matriz}} \&A) const
+\begin{DoxyCompactList}\small\item\em Operador para multiplicar dos matrices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}} \mbox{\hyperlink{classMatriz_ab50a7af460b0627efd67124ebc2b6b64}{operator$\ast$}} (double escalar) const
+\begin{DoxyCompactList}\small\item\em Operador de multiplicaci\'{o}n de escalar por \mbox{\hyperlink{classMatriz}{Matriz}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}} \mbox{\hyperlink{classMatriz_a501ab4dd96e9efee6a6ecd7e2919f128}{transpuesta}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve la matriz transpuesta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}} \mbox{\hyperlink{classMatriz_a27cc0bfaf413e791f7e91d6ddfcffab1}{inversa}} () const
+\begin{DoxyCompactList}\small\item\em Devuelve la matriz inversa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMatriz_a579f2c46b051d49a62471ae92a3c17b9}{resize}} (Dimension\+\_\+tipo n, Dimension\+\_\+tipo m)
+\begin{DoxyCompactList}\small\item\em Redimensiona la matriz. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classMatriz_a76c2a5c6359f824fbd7bcc76cbafdd9c}{Determinante}} () const
+\begin{DoxyCompactList}\small\item\em Calcula el determinante de la matriz. \end{DoxyCompactList}\item 
+Dimension\+\_\+tipo \mbox{\hyperlink{classMatriz_a3f64851471744590f11eaea3452c6261}{obtener\+Filas}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el n\'{u}mero de filas. \end{DoxyCompactList}\item 
+Dimension\+\_\+tipo \mbox{\hyperlink{classMatriz_abbd7921f6ebb8ed0c4cd99ca3c6ca8b0}{obtener\+Columnas}} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el n\'{u}mero de columnas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classMatriz_aa0e76685e19725cd72e9f712aa955972}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classMatriz}{Matriz}} \&A)
+\begin{DoxyCompactList}\small\item\em Operador de inserci\'{o}n. Permite imprimir una matriz mediante un flujo de salida. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{classMatriz_af7b41767d12a39ffa46100377b2ca463}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{classMatriz}{Matriz}} \&A)
+\begin{DoxyCompactList}\small\item\em Operador de extracci\'{o}n. Permite capturar un vector mediante un flujo de entrada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatriz}{Matriz}} \mbox{\hyperlink{classMatriz_a6740acc5db235bae07dfb8ed9fb115d0}{operator$\ast$}} (double escalar, const \mbox{\hyperlink{classMatriz}{Matriz}} \&A)
+\begin{DoxyCompactList}\small\item\em Operador de multiplicaci\'{o}n de escalar por \mbox{\hyperlink{classMatriz}{Matriz}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Permite utilizar {\bfseries{ Matrices algebraicas }} y ofrece un conjunto de operaciones b\'{a}sicas\+: suma, resta, multiplicaci\'{o}n de una \mbox{\hyperlink{classMatriz}{Matriz}} por un escalar, multiplicaci\'{o}n de matrices, inversa de una \mbox{\hyperlink{classMatriz}{Matriz}}, determinante de una \mbox{\hyperlink{classMatriz}{Matriz}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ Ejemplo.cpp}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{Matriz_8hpp}{Matriz.hpp}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{classMatriz}{Matriz}} v(2,2), w(2,2), resultate;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << \textcolor{stringliteral}{"{}Introduzca las 2 componentes de la primera Matriz..."{}} <<}
+\DoxyCodeLine{std::endl; cin >> v; std::cout << \textcolor{stringliteral}{"{}Introduzca las 2 componentes de la segunda}}
+\DoxyCodeLine{\textcolor{stringliteral}{Matriz..."{}} << std::endl; cin >> w;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    resultante = v + w;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << v << \textcolor{stringliteral}{"{} + "{}} << w << \textcolor{stringliteral}{"{} = "{}} << resultante << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    resultante = v -\/ w;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << v << \textcolor{stringliteral}{"{} -\/ "{}} << w << \textcolor{stringliteral}{"{} = "{}} << resultante << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << v << \textcolor{stringliteral}{"{} * "{}} << w << \textcolor{stringliteral}{"{} = "{}} << (v * w) << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    resultante = v * 2.5;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << v << \textcolor{stringliteral}{"{}\string^-\/1 = "{}} << v.\mbox{\hyperlink{classMatriz_a27cc0bfaf413e791f7e91d6ddfcffab1}{inversa}}() << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    std::cout << v << \textcolor{stringliteral}{"{} * "{}} << 2.5 << \textcolor{stringliteral}{"{} = "{}} << resultante << std::endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyVerb}Salida:
+     Introduzca las 4 componentes de la primera Matriz...
+     1
+     2
+     3
+     4
+     Introduzca las 4 componentes de la segunda Matriz...
+     5
+     6
+     7
+     8
+     [1][2]
+     [3][4]
+     +
+     [5][6]
+     [7][8]
+     =
+     [6][8]
+     [10][12]
+
+     [1][2]
+     [3][4]
+     -
+     [5][6]
+     [7][8]
+     =
+     [-4][-4]
+     [-4][-4]
+
+     [1][2]
+     [3][4]
+     *
+     [5][6]
+     [7][8]
+     =
+     [19][22]
+     [43][50]
+
+     [1][2]
+     [3][4]
+     ^-1
+     =
+     [-2][1]
+     [1.5][-0.5]
+
+     [1][2]
+     [3][4]
+     *
+     2.5
+     =
+     [2.5][5]
+     [7.5][10]\end{DoxyVerb}
+ 
+
+\doxysubsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classMatriz_a744e5843b734dae0a72c43481bf4955a}\label{classMatriz_a744e5843b734dae0a72c43481bf4955a}} 
+\index{Matriz@{Matriz}!Matriz@{Matriz}}
+\index{Matriz@{Matriz}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{Matriz()}{Matriz()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Matriz\+::\+Matriz (\begin{DoxyParamCaption}\item[{Dimension\+\_\+tipo}]{n = {\ttfamily 1},  }\item[{Dimension\+\_\+tipo}]{m = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+Versi\'{o}n 1\+: Constructor de una \mbox{\hyperlink{classMatriz}{Matriz}} de dimensi\'{o}n 1 por omisi\'{o}n.
+
+Versi\'{o}n 2\+: Constructor de una \mbox{\hyperlink{classMatriz}{Matriz}} de la dimensi\'{o}n indicada por {\bfseries{n}} y m. Operador de conversi\'{o}n expl\'{\i}cita de {\bfseries{int}} a {\bfseries{\mbox{\hyperlink{classMatriz}{Matriz}}}}.
+
+
+\begin{DoxyParams}{Parámetros}
+{\em n} & La dimensi\'{o}n de las filas de la \mbox{\hyperlink{classMatriz}{Matriz}} a construir.\\
+\hline
+{\em m} & La dimensi\'{o}n de las columnas de la \mbox{\hyperlink{classMatriz}{Matriz}} a construir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondición}
+La dimensi\'{o}n y m deben ser un n\'{u}meros positivos.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{char $\ast$}} La \mbox{\hyperlink{classMatriz}{Matriz}} no puede ser creado o la dimens\'{o}n no es positiva. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_a9a8519c28b24cfa75fc41bf993f9132a}\label{classMatriz_a9a8519c28b24cfa75fc41bf993f9132a}} 
+\index{Matriz@{Matriz}!Matriz@{Matriz}}
+\index{Matriz@{Matriz}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{Matriz()}{Matriz()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Matriz\+::\+Matriz (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatriz}{Matriz}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Constructor de copias. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em A} & La \mbox{\hyperlink{classMatriz}{Matriz}} a copiar.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{char $\ast$}} La \mbox{\hyperlink{classMatriz}{Matriz}} copia no puede ser creado. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_a2092b7a289ecec369e1da407d5839f5a}\label{classMatriz_a2092b7a289ecec369e1da407d5839f5a}} 
+\index{Matriz@{Matriz}!````~Matriz@{$\sim$Matriz}}
+\index{````~Matriz@{$\sim$Matriz}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{$\sim$Matriz()}{~Matriz()}}
+{\footnotesize\ttfamily Matriz\+::$\sim$\+Matriz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Libera la memoria del arreglo bidimensional reservado por el constructor. 
+
+\doxysubsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classMatriz_a76c2a5c6359f824fbd7bcc76cbafdd9c}\label{classMatriz_a76c2a5c6359f824fbd7bcc76cbafdd9c}} 
+\index{Matriz@{Matriz}!Determinante@{Determinante}}
+\index{Determinante@{Determinante}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{Determinante()}{Determinante()}}
+{\footnotesize\ttfamily double Matriz\+::\+Determinante (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calcula el determinante de la matriz. 
+
+\begin{DoxyReturn}{Devuelve}
+El valor del determinante.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+La matriz debe ser cuadrada (nxn).
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{ char $\ast$ }} No puede calcular su determinante. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_a27cc0bfaf413e791f7e91d6ddfcffab1}\label{classMatriz_a27cc0bfaf413e791f7e91d6ddfcffab1}} 
+\index{Matriz@{Matriz}!inversa@{inversa}}
+\index{inversa@{inversa}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{inversa()}{inversa()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatriz}{Matriz}} Matriz\+::inversa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la matriz inversa. 
+
+\begin{DoxyReturn}{Devuelve}
+La \mbox{\hyperlink{classMatriz}{Matriz}} resultante de la operaci\'{o}n inversa.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+La matriz debe ser cuadrada (nxn).
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{ char $\ast$ }} La \mbox{\hyperlink{classMatriz}{Matriz}} no es invertible. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_abbd7921f6ebb8ed0c4cd99ca3c6ca8b0}\label{classMatriz_abbd7921f6ebb8ed0c4cd99ca3c6ca8b0}} 
+\index{Matriz@{Matriz}!obtenerColumnas@{obtenerColumnas}}
+\index{obtenerColumnas@{obtenerColumnas}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{obtenerColumnas()}{obtenerColumnas()}}
+{\footnotesize\ttfamily Dimension\+\_\+tipo Matriz\+::obtener\+Columnas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve el n\'{u}mero de columnas. 
+
+\begin{DoxyReturn}{Devuelve}
+El valor de la dimension. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatriz_a3f64851471744590f11eaea3452c6261}\label{classMatriz_a3f64851471744590f11eaea3452c6261}} 
+\index{Matriz@{Matriz}!obtenerFilas@{obtenerFilas}}
+\index{obtenerFilas@{obtenerFilas}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{obtenerFilas()}{obtenerFilas()}}
+{\footnotesize\ttfamily Dimension\+\_\+tipo Matriz\+::obtener\+Filas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Devuelve el n\'{u}mero de filas. 
+
+\begin{DoxyReturn}{Devuelve}
+El valor de la dimension. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatriz_a0c3dc47ff7dbbcf3670d48fa0d6e36cf}\label{classMatriz_a0c3dc47ff7dbbcf3670d48fa0d6e36cf}} 
+\index{Matriz@{Matriz}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatriz}{Matriz}} Matriz\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatriz}{Matriz}} \&}]{A }\end{DoxyParamCaption}) const}
+
+
+
+Operador para multiplicar dos matrices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em A} & El factor derecho. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La matriz resultado de la multiplicaci\'{o}n.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Sea la matriz A de nxm y la matriz B debe ser de dimensi\'{o}n mxa.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{char $\ast$}} Las matrices a multiplicar, la cantidad columnas de la matriz izquierda es diferente a la cantidad de filas de la derecha. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_ab50a7af460b0627efd67124ebc2b6b64}\label{classMatriz_ab50a7af460b0627efd67124ebc2b6b64}} 
+\index{Matriz@{Matriz}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatriz}{Matriz}} Matriz\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{double}]{escalar }\end{DoxyParamCaption}) const}
+
+
+
+Operador de multiplicaci\'{o}n de escalar por \mbox{\hyperlink{classMatriz}{Matriz}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em escalar} & El n\'{u}mero por el que se multiplica un \mbox{\hyperlink{classMatriz}{Matriz}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La \mbox{\hyperlink{classMatriz}{Matriz}} resultante de la multiplicaci\'{o}n por escalar.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{ char $\ast$ }} La \mbox{\hyperlink{classMatriz}{Matriz}} resultante no puede ser creado. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_aa620e8b8852e3336c7102dcf73f0165f}\label{classMatriz_aa620e8b8852e3336c7102dcf73f0165f}} 
+\index{Matriz@{Matriz}!operator+@{operator+}}
+\index{operator+@{operator+}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatriz}{Matriz}} Matriz\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatriz}{Matriz}} \&}]{A }\end{DoxyParamCaption}) const}
+
+
+
+Operador para sumar dos matrices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em A} & Sumando derecho. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La matriz resultante de la suma.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Las matrices a sumar deben ser de la misma dimensi\'{o}n.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{char $\ast$}} Las matrices a sumar no son de la misma dimensi\'{o}n o la matriz resultante no puede ser creado. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_a9e9c2702902246f65bc502255a3e97c2}\label{classMatriz_a9e9c2702902246f65bc502255a3e97c2}} 
+\index{Matriz@{Matriz}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatriz}{Matriz}} Matriz\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatriz}{Matriz}} \&}]{A }\end{DoxyParamCaption}) const}
+
+
+
+Operador para restar dos matrices. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em A} & Restando derecho. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La matriz resultante de la resta.
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondición}
+Las matrices a sumar deben ser de la misma dimensi\'{o}n.
+\end{DoxyPrecond}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{char $\ast$}} Las matrices a restar no son de la misma dimensi\'{o}n o la matriz resultante no puede ser creado. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_ad4d8e0df6a6158554bbd58eecc58801a}\label{classMatriz_ad4d8e0df6a6158554bbd58eecc58801a}} 
+\index{Matriz@{Matriz}!operator=@{operator=}}
+\index{operator=@{operator=}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatriz}{Matriz}}\& Matriz\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatriz}{Matriz}} \&}]{A }\end{DoxyParamCaption})}
+
+
+
+Operador de asignaci\'{o}n. Copia un matriz en otro matriz. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em A} & La matriz a copiar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La matriz copia. Permite la aplicaci\'{o}n en cascada del operador.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{char $\ast$}} La matriz copia no puede ser creado. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_a579f2c46b051d49a62471ae92a3c17b9}\label{classMatriz_a579f2c46b051d49a62471ae92a3c17b9}} 
+\index{Matriz@{Matriz}!resize@{resize}}
+\index{resize@{resize}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void Matriz\+::resize (\begin{DoxyParamCaption}\item[{Dimension\+\_\+tipo}]{n,  }\item[{Dimension\+\_\+tipo}]{m }\end{DoxyParamCaption})}
+
+
+
+Redimensiona la matriz. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em n} & El n\'{u}mero de filas \\
+\hline
+{\em m} & El n\'{u}mero de columnas\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{ char $\ast$ }} Si n o m no es un n\'{u}mero positivo. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_a501ab4dd96e9efee6a6ecd7e2919f128}\label{classMatriz_a501ab4dd96e9efee6a6ecd7e2919f128}} 
+\index{Matriz@{Matriz}!transpuesta@{transpuesta}}
+\index{transpuesta@{transpuesta}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{transpuesta()}{transpuesta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatriz}{Matriz}} Matriz\+::transpuesta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Devuelve la matriz transpuesta. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em escalar} & El n\'{u}mero por el que se multiplica un \mbox{\hyperlink{classMatriz}{Matriz}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La \mbox{\hyperlink{classMatriz}{Matriz}} resultante de la multiplicaci\'{o}n por escalar.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{ char $\ast$ }} La \mbox{\hyperlink{classMatriz}{Matriz}} resultante no puede ser creado. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{classMatriz_a6740acc5db235bae07dfb8ed9fb115d0}\label{classMatriz_a6740acc5db235bae07dfb8ed9fb115d0}} 
+\index{Matriz@{Matriz}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatriz}{Matriz}} operator$\ast$ (\begin{DoxyParamCaption}\item[{double}]{escalar,  }\item[{const \mbox{\hyperlink{classMatriz}{Matriz}} \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Operador de multiplicaci\'{o}n de escalar por \mbox{\hyperlink{classMatriz}{Matriz}}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em escalar} & El n\'{u}mero por el que se multiplica un \mbox{\hyperlink{classMatriz}{Matriz}}. \\
+\hline
+{\em A} & La \mbox{\hyperlink{classMatriz}{Matriz}} a multiplicar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+La \mbox{\hyperlink{classMatriz}{Matriz}} resultante de la multiplicaci\'{o}n por escalar.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Excepciones}
+{\em const} & {\bfseries{ char $\ast$ }} La \mbox{\hyperlink{classMatriz}{Matriz}} resultante no puede ser creado. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classMatriz_aa0e76685e19725cd72e9f712aa955972}\label{classMatriz_aa0e76685e19725cd72e9f712aa955972}} 
+\index{Matriz@{Matriz}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classMatriz}{Matriz}} \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Operador de inserci\'{o}n. Permite imprimir una matriz mediante un flujo de salida. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em out} & El flujo de salida. \\
+\hline
+{\em A} & La matriz a imprimir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+El flujo de salida. Permite la aplicaci\'{o}n en cascada del operador. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatriz_af7b41767d12a39ffa46100377b2ca463}\label{classMatriz_af7b41767d12a39ffa46100377b2ca463}} 
+\index{Matriz@{Matriz}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Matriz@{Matriz}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{classMatriz}{Matriz}} \&}]{A }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Operador de extracci\'{o}n. Permite capturar un vector mediante un flujo de entrada. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em in} & El flujo de entrada. \\
+\hline
+{\em A} & La matriz a capturar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+El flujo de entrada. Permite la aplicaci\'{o}n en cascada del operador. 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{Matriz_8hpp}{Matriz.\+hpp}}\end{DoxyCompactItemize}

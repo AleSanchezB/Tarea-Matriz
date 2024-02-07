@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Matriz: Fichero Fuente src/Matriz.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Matriz
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Es una clase de una matriz algebraica, la cual realiza operaciones matriciales básicas</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Matriz.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Matriz_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef MATRIZ_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define MATRIZ_HPP</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> Dimension_tipo;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classMatriz.html">  113</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMatriz.html">Matriz</a> {</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classMatriz.html#aa0e76685e19725cd72e9f712aa955972">  121</a></span>&#160;    <span class="keyword">friend</span> std::ostream &amp;<a class="code" href="classMatriz.html#aa0e76685e19725cd72e9f712aa955972">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code" href="classMatriz.html">Matriz</a> &amp;A);</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classMatriz.html#af7b41767d12a39ffa46100377b2ca463">  129</a></span>&#160;    <span class="keyword">friend</span> std::istream &amp;<a class="code" href="classMatriz.html#af7b41767d12a39ffa46100377b2ca463">operator&gt;&gt;</a>(std::istream &amp;is, <a class="code" href="classMatriz.html">Matriz</a> &amp;A);</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="classMatriz.html#a6740acc5db235bae07dfb8ed9fb115d0">  139</a></span>&#160;    <span class="keyword">friend</span> <a class="code" href="classMatriz.html">Matriz</a> <a class="code" href="classMatriz.html#a6740acc5db235bae07dfb8ed9fb115d0">operator*</a>(<span class="keywordtype">double</span> escalar, <span class="keyword">const</span> <a class="code" href="classMatriz.html">Matriz</a> &amp;A);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classMatriz.html#a744e5843b734dae0a72c43481bf4955a">  160</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classMatriz.html#a744e5843b734dae0a72c43481bf4955a">Matriz</a>(Dimension_tipo n = 1, Dimension_tipo m = 1);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="classMatriz.html#a9a8519c28b24cfa75fc41bf993f9132a">  168</a></span>&#160;    <a class="code" href="classMatriz.html#a9a8519c28b24cfa75fc41bf993f9132a">Matriz</a>(<span class="keyword">const</span> <a class="code" href="classMatriz.html">Matriz</a> &amp;A);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classMatriz.html#a2092b7a289ecec369e1da407d5839f5a">  174</a></span>&#160;    <a class="code" href="classMatriz.html#a2092b7a289ecec369e1da407d5839f5a">~Matriz</a>();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    </div>
+<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="classMatriz.html#ad4d8e0df6a6158554bbd58eecc58801a">  183</a></span>&#160;    <a class="code" href="classMatriz.html">Matriz</a>&amp; <a class="code" href="classMatriz.html#ad4d8e0df6a6158554bbd58eecc58801a">operator=</a>(<span class="keyword">const</span> <a class="code" href="classMatriz.html">Matriz</a>&amp; A);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="classMatriz.html#aa620e8b8852e3336c7102dcf73f0165f">  194</a></span>&#160;    <a class="code" href="classMatriz.html">Matriz</a> <a class="code" href="classMatriz.html#aa620e8b8852e3336c7102dcf73f0165f">operator+</a>(<span class="keyword">const</span> <a class="code" href="classMatriz.html">Matriz</a>&amp; A) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="classMatriz.html#a9e9c2702902246f65bc502255a3e97c2">  205</a></span>&#160;    <a class="code" href="classMatriz.html">Matriz</a> <a class="code" href="classMatriz.html#a9e9c2702902246f65bc502255a3e97c2">operator-</a>(<span class="keyword">const</span> <a class="code" href="classMatriz.html">Matriz</a> &amp;A) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="classMatriz.html#a0c3dc47ff7dbbcf3670d48fa0d6e36cf">  216</a></span>&#160;    <a class="code" href="classMatriz.html">Matriz</a> <a class="code" href="classMatriz.html#a0c3dc47ff7dbbcf3670d48fa0d6e36cf">operator*</a>(<span class="keyword">const</span> <a class="code" href="classMatriz.html">Matriz</a> &amp;A) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno"><a class="line" href="classMatriz.html#ab50a7af460b0627efd67124ebc2b6b64">  226</a></span>&#160;    <a class="code" href="classMatriz.html">Matriz</a> <a class="code" href="classMatriz.html#ab50a7af460b0627efd67124ebc2b6b64">operator*</a>(<span class="keywordtype">double</span> escalar) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="classMatriz.html#a501ab4dd96e9efee6a6ecd7e2919f128">  236</a></span>&#160;    <a class="code" href="classMatriz.html">Matriz</a> <a class="code" href="classMatriz.html#a501ab4dd96e9efee6a6ecd7e2919f128">transpuesta</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="classMatriz.html#a27cc0bfaf413e791f7e91d6ddfcffab1">  247</a></span>&#160;    <a class="code" href="classMatriz.html">Matriz</a> <a class="code" href="classMatriz.html#a27cc0bfaf413e791f7e91d6ddfcffab1">inversa</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="classMatriz.html#a579f2c46b051d49a62471ae92a3c17b9">  257</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMatriz.html#a579f2c46b051d49a62471ae92a3c17b9">resize</a>(Dimension_tipo n, Dimension_tipo m);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="classMatriz.html#a76c2a5c6359f824fbd7bcc76cbafdd9c">  268</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classMatriz.html#a76c2a5c6359f824fbd7bcc76cbafdd9c">Determinante</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="classMatriz.html#a3f64851471744590f11eaea3452c6261">  275</a></span>&#160;    Dimension_tipo <a class="code" href="classMatriz.html#a3f64851471744590f11eaea3452c6261">obtenerFilas</a>();</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="classMatriz.html#abbd7921f6ebb8ed0c4cd99ca3c6ca8b0">  282</a></span>&#160;    Dimension_tipo <a class="code" href="classMatriz.html#abbd7921f6ebb8ed0c4cd99ca3c6ca8b0">obtenerColumnas</a>();</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    Dimension_tipo n;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    Dimension_tipo m;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordtype">double</span> **componentes;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordtype">void</span> establecerDim(Dimension_tipo, Dimension_tipo);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordtype">void</span> eliminarMatriz();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordtype">void</span> crearMatriz();     </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <a class="code" href="classMatriz.html">Matriz</a> identidad() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;};</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassMatriz_html"><div class="ttname"><a href="classMatriz.html">Matriz</a></div><div class="ttdef"><b>Definition:</b> Matriz.hpp:113</div></div>
+<div class="ttc" id="aclassMatriz_html_a0c3dc47ff7dbbcf3670d48fa0d6e36cf"><div class="ttname"><a href="classMatriz.html#a0c3dc47ff7dbbcf3670d48fa0d6e36cf">Matriz::operator*</a></div><div class="ttdeci">Matriz operator*(const Matriz &amp;A) const</div><div class="ttdoc">Operador para multiplicar dos matrices.</div></div>
+<div class="ttc" id="aclassMatriz_html_a2092b7a289ecec369e1da407d5839f5a"><div class="ttname"><a href="classMatriz.html#a2092b7a289ecec369e1da407d5839f5a">Matriz::~Matriz</a></div><div class="ttdeci">~Matriz()</div><div class="ttdoc">Destructor.</div></div>
+<div class="ttc" id="aclassMatriz_html_a27cc0bfaf413e791f7e91d6ddfcffab1"><div class="ttname"><a href="classMatriz.html#a27cc0bfaf413e791f7e91d6ddfcffab1">Matriz::inversa</a></div><div class="ttdeci">Matriz inversa() const</div><div class="ttdoc">Devuelve la matriz inversa.</div></div>
+<div class="ttc" id="aclassMatriz_html_a3f64851471744590f11eaea3452c6261"><div class="ttname"><a href="classMatriz.html#a3f64851471744590f11eaea3452c6261">Matriz::obtenerFilas</a></div><div class="ttdeci">Dimension_tipo obtenerFilas()</div><div class="ttdoc">Devuelve el número de filas.</div></div>
+<div class="ttc" id="aclassMatriz_html_a501ab4dd96e9efee6a6ecd7e2919f128"><div class="ttname"><a href="classMatriz.html#a501ab4dd96e9efee6a6ecd7e2919f128">Matriz::transpuesta</a></div><div class="ttdeci">Matriz transpuesta() const</div><div class="ttdoc">Devuelve la matriz transpuesta.</div></div>
+<div class="ttc" id="aclassMatriz_html_a579f2c46b051d49a62471ae92a3c17b9"><div class="ttname"><a href="classMatriz.html#a579f2c46b051d49a62471ae92a3c17b9">Matriz::resize</a></div><div class="ttdeci">void resize(Dimension_tipo n, Dimension_tipo m)</div><div class="ttdoc">Redimensiona la matriz.</div></div>
+<div class="ttc" id="aclassMatriz_html_a6740acc5db235bae07dfb8ed9fb115d0"><div class="ttname"><a href="classMatriz.html#a6740acc5db235bae07dfb8ed9fb115d0">Matriz::operator*</a></div><div class="ttdeci">friend Matriz operator*(double escalar, const Matriz &amp;A)</div><div class="ttdoc">Operador de multiplicación de escalar por Matriz.</div></div>
+<div class="ttc" id="aclassMatriz_html_a744e5843b734dae0a72c43481bf4955a"><div class="ttname"><a href="classMatriz.html#a744e5843b734dae0a72c43481bf4955a">Matriz::Matriz</a></div><div class="ttdeci">Matriz(Dimension_tipo n=1, Dimension_tipo m=1)</div><div class="ttdoc">Constructor.</div></div>
+<div class="ttc" id="aclassMatriz_html_a76c2a5c6359f824fbd7bcc76cbafdd9c"><div class="ttname"><a href="classMatriz.html#a76c2a5c6359f824fbd7bcc76cbafdd9c">Matriz::Determinante</a></div><div class="ttdeci">double Determinante() const</div><div class="ttdoc">Calcula el determinante de la matriz.</div></div>
+<div class="ttc" id="aclassMatriz_html_a9a8519c28b24cfa75fc41bf993f9132a"><div class="ttname"><a href="classMatriz.html#a9a8519c28b24cfa75fc41bf993f9132a">Matriz::Matriz</a></div><div class="ttdeci">Matriz(const Matriz &amp;A)</div><div class="ttdoc">Constructor de copias.</div></div>
+<div class="ttc" id="aclassMatriz_html_a9e9c2702902246f65bc502255a3e97c2"><div class="ttname"><a href="classMatriz.html#a9e9c2702902246f65bc502255a3e97c2">Matriz::operator-</a></div><div class="ttdeci">Matriz operator-(const Matriz &amp;A) const</div><div class="ttdoc">Operador para restar dos matrices.</div></div>
+<div class="ttc" id="aclassMatriz_html_aa0e76685e19725cd72e9f712aa955972"><div class="ttname"><a href="classMatriz.html#aa0e76685e19725cd72e9f712aa955972">Matriz::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Matriz &amp;A)</div><div class="ttdoc">Operador de inserción. Permite imprimir una matriz mediante un flujo de salida.</div></div>
+<div class="ttc" id="aclassMatriz_html_aa620e8b8852e3336c7102dcf73f0165f"><div class="ttname"><a href="classMatriz.html#aa620e8b8852e3336c7102dcf73f0165f">Matriz::operator+</a></div><div class="ttdeci">Matriz operator+(const Matriz &amp;A) const</div><div class="ttdoc">Operador para sumar dos matrices.</div></div>
+<div class="ttc" id="aclassMatriz_html_ab50a7af460b0627efd67124ebc2b6b64"><div class="ttname"><a href="classMatriz.html#ab50a7af460b0627efd67124ebc2b6b64">Matriz::operator*</a></div><div class="ttdeci">Matriz operator*(double escalar) const</div><div class="ttdoc">Operador de multiplicación de escalar por Matriz.</div></div>
+<div class="ttc" id="aclassMatriz_html_abbd7921f6ebb8ed0c4cd99ca3c6ca8b0"><div class="ttname"><a href="classMatriz.html#abbd7921f6ebb8ed0c4cd99ca3c6ca8b0">Matriz::obtenerColumnas</a></div><div class="ttdeci">Dimension_tipo obtenerColumnas()</div><div class="ttdoc">Devuelve el número de columnas.</div></div>
+<div class="ttc" id="aclassMatriz_html_ad4d8e0df6a6158554bbd58eecc58801a"><div class="ttname"><a href="classMatriz.html#ad4d8e0df6a6158554bbd58eecc58801a">Matriz::operator=</a></div><div class="ttdeci">Matriz &amp; operator=(const Matriz &amp;A)</div><div class="ttdoc">Operador de asignación. Copia un matriz en otro matriz.</div></div>
+<div class="ttc" id="aclassMatriz_html_af7b41767d12a39ffa46100377b2ca463"><div class="ttname"><a href="classMatriz.html#af7b41767d12a39ffa46100377b2ca463">Matriz::operator&gt;&gt;</a></div><div class="ttdeci">friend std::istream &amp; operator&gt;&gt;(std::istream &amp;is, Matriz &amp;A)</div><div class="ttdoc">Operador de extracción. Permite capturar un vector mediante un flujo de entrada.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
